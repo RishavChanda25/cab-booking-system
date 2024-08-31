@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="col-md-3">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="jumbotron">
+                <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+                    <div class="form-group">
+                        <label for="issue_type">Type Of Issue: </label>
+                        <select name="issue_type" formControlName="issue_type" class="form-control input-sm">
+                            <option value="" disabled selected></option>
+                            <option value="Login/Registration Issue">Login/Registration Issue</option>
+                            <option value="Booking/Ride Issue">Booking/Ride Issue</option>
+                            <option value="Payment Issue">Payment Issue</option>
+                            <option value="Driver-Related">Driver-Related Issue</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="booking_id">Booking ID (if applicable): </label>
+                        <input type="number" name="booking_id" formControlName="booking_id" autocomplete="off"
+                            class="form-control input-sm" placeholder="Booking ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description: </label>
+                        <textarea name="description" formControlName="description" rows="5"
+                            class="form-control input-sm" placeholder="Description"></textarea>
+                    </div>
+                    <button type="submit" [disabled]="angForm.invalid" class="btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+{
+    "/php": {
+      "target": "http://localhost",
+      "secure": false,
+      "pathRewrite": {
+        "^/php": "/cab-booking-system/php"
+      },
+      "changeOrigin": true
+    }
+  }
+  
+  

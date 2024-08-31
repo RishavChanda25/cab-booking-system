@@ -1,0 +1,45 @@
+
+<div class="container">
+    <div class="col-md-8">
+        <div class="jumbotron">
+            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+                <div class="form-group">
+                    <label class="required" for="name">Name: </label>
+                    <input type="text" name="name" formControlName="name" autocomplete="off"
+                        class="form-control input-sm" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <label class="required" for="email">Email: </label>
+                    <input type="email" name="email" formControlName="email" autocomplete="off"
+                        class="form-control input-sm" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label class="required" for="phone">Phone No. (10 characters): </label>
+                    <input type="text" name="phone" formControlName="phone" autocomplete="off"
+                        class="form-control input-sm" placeholder="Phone" required minlength="10" maxlength="10">
+                </div>
+                <div class="form-group">
+                    <label class="required" for="password">Password (Minimum 8 Characters):</label>
+                        <input type="{{ passwordVisible ? 'text' : 'password' }}" name="password" formControlName="password" autocomplete="off"
+                            class="form-control input-sm" placeholder="Password">
+                        <input type="checkbox" id="togglePassword" (change)="togglePasswordVisibility()" #togglePassword>
+                </div>
+                <div class="form-group">
+                    <label for="Address">Address: </label>
+                    <input type="text" name="Address" formControlName="address" autocomplete="off"
+                        class="form-control input-sm" placeholder="Address">
+                </div>
+                <div class="form-group">
+                    <label for="Acc_no">Bank Account No.: </label>
+                    <input type="text" name="Acc_no" formControlName="acc_no" autocomplete="off"
+                        class="form-control input-sm" placeholder="Bank Account No.">
+                </div>
+                <button type="submit" [disabled]="angForm.invalid" class="btn btn-success">Register</button>
+            </form>
+        </div>
+        <h5> The asterisk (<span style="color: red">*</span>) indicates required fields.</h5>
+    </div>
+    <a align="center" class="navbar-brand5" routerLink="/driverregistration" routerLinkActive="active">
+        Registering As A Driver?
+    </a>
+</div>

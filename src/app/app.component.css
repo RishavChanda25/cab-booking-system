@@ -1,0 +1,99 @@
+ul {
+    list-style: none;
+    padding: 25px;
+    margin: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: center/cover fixed no-repeat;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-blend-mode: lighten;
+    background-attachment: fixed;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width:auto;
+}
+nav {
+    background-color: #505350;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:#e9ecef;
+    text-decoration: none;
+    
+}
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+.nav-item {
+    margin: 0 5px;
+}
+.nav-link,
+.btn-block,
+.separator {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.nav-link:hover,
+.btn-block:hover,
+.separator:hover {
+    color: #e9ecef;
+}
+.router-link-active {
+    font-weight: bold;
+}
+.separator {
+    margin: 0 5px;
+}
+.jumbotron {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+button {
+    font-size: 1rem;
+    background-color: #505350;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    padding: 0px;
+    margin:0px;
+}
+.navbar-nav .nav-item.active,
+.navbar-nav .nav-link.active {
+    color: #000000; 
+}
+:host {
+    display: block;
+    background-image: url('/assets/background.jpg'); /* Adjust the path accordingly */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%; /* Set the height as needed */
+    background-color: rgba(255, 255, 255, 0.4);
+    background-blend-mode: lighten;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }

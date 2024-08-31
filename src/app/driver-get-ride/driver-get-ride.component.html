@@ -1,0 +1,33 @@
+<div class="container">
+    <table *ngIf="customer_list.length > 0">
+      <thead>
+        <tr>
+          <th>Customer Name</th>
+          <th>Pickup</th>
+          <th>Dropoff</th>
+          <th>Distance(km)</th>
+          <th>Proposed Fee</th>
+          <th>Select</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customer_list">
+          <td>{{ customer.name }}</td>
+          <td>{{ customer.pickup }}</td>
+          <td>{{ customer.dropoff }}</td>
+          <td>{{ customer.distance }}</td>
+          <td>{{ customer.proposed_fee }}</td>
+          <td>
+            <input
+              type="radio"
+              [value]="customer"
+              (change)="onRadioChange(customer)"
+              [checked]="isSelected(customer)"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="postdata()">Choose Ride</button>
+  </div>
+  

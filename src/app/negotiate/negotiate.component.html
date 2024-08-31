@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <h2 align="center">Amount To Be Paid: {{ standard_fee | number: '1.2-2' }}</h2>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+
+            <div class="jumbotron">
+                <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+                    <div class="form-group">
+                        <label for="customer_fee">Preferred Fee: </label>
+                        <input type="number" name="customer_fee" formControlName="customer_fee" autocomplete="off"
+                            class="form-control input-sm" placeholder="Enter Your Preferred Fare" required min="1">
+                    </div>
+                    <button type="submit" [disabled]="angForm.invalid" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    <table *ngIf="driver_list.length > 0">
+        <thead>
+            <tr>
+                <th>Driver ID</th>
+                <th>Driver Name</th>
+                <th>Proposed Fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let driver of driver_list">
+                <td>{{ driver.driver_id }}</td>
+                <td>{{ driver.d_name }}</td>
+                <td>{{ driver.proposed_fee }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
